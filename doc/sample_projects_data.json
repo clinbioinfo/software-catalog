@@ -1,0 +1,83 @@
+[
+	{
+		"uuid": "1",
+		"name" : "name1",
+		"version" : "version1",
+		"desc" : "description1",
+		"logo_path" : "some/path/logo",
+		"screenshots" : [
+			{
+				"id" : "screenshot_id_1",
+				"caption" : "some caption",
+				"desc" : "screenshot 1 description",
+				"path" : "some/path/screenshots/screenshot1.png"
+			},
+			{
+				"id" : "screenshot_id_2",
+				"caption" : "some caption",
+				"desc" : "screenshot 2 description",
+				"path" : "some/path/screenshots/screenshot2.png"
+			},
+			{
+				"id" : "screenshot_id_3",
+				"caption" : "some caption",
+				"desc" : "screenshot 3 description",
+				"path" : "some/path/screenshots/screenshot3.png"
+			}
+		],
+		"video_tutorials" : [
+			{
+				"id" : "video_id_1",
+				"caption" : "some caption",
+				"desc" : "screenshot 1 description",
+				"path" : "some/path/video-tutorials/video1.ogg"
+			},
+			{
+				"id" : "video_id_2",
+				"caption" : "some caption",
+				"desc" : "screenshot 2 description",
+				"path" : "some/path/video-tutorials/video2.ogg"
+			},
+			{
+				"id" : "video_id_3",
+				"caption" : "some caption",
+				"desc" : "screenshot 3 description",
+				"path" : "some/path/video-tutorials/video3.ogg"
+			}
+		],
+		"intended_usage" : ["all", "research", "RIA"],
+		"tags" : ["RIA"],
+		"authorization_scheme" : {
+			"type" : "MedImmune AD",
+			"desc" : "Description of the authorization scheme/mechanism."
+		},
+		"links" : [
+			{
+				"label" : "link label to be displayed in the UI",
+				"desc" : "optional description",
+				"url" : "http://rbx.medimmune.com/name1",
+				"type" : "software instance"
+			},
+			{
+				"label" : "link label to be displayed in the UI",
+				"desc" : "optional description",
+				"url" : "http://sharepoint.medimmune.com/name1",
+				"type" : "sharepoint"
+			}
+		],
+		"points_of_contact" : [
+			{
+				"first_name": "someFirstName",
+				"last_name" : "someLastName",
+				"email" : "someemail@medimmune.com",
+				"role" : "system maintainer"
+			},
+			{
+				"first_name": "someotherFirstName",
+				"last_name" : "someotherLastName",
+				"email" : "someOtheremail@medimmune.com",
+				"role" : "project manager"
+			}
+		]
+	}
+]

@@ -1,0 +1,17 @@
+<template name="ProjectsDashboard">
+	<h4>Project Count: ({{projectCount}})</h4>
+	{{#if $.Session.get 'newProject'}}
+		{{> NewProject}}
+	{{else}}
+		<button class="new-project">New Project</button>
+	{{/if}}
+	<section class="projects">
+		{{# if Template.subscriptionsReady}}
+			{{#each projects}}
+				{{> ProjectSummary}}
+			{{/each}}
+		{{else}}
+			<p>Loading</p>
+		{{/if}}
+	</section>
+</template>

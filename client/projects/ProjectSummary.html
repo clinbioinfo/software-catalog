@@ -1,0 +1,24 @@
+<template name="ProjectSummary">
+	<article class="projectsummary">
+		<h4>{{name}}</h4>
+		{{#if editMode}}
+			{{> quickForm collection="Projects" id=updateProjectSummaryId type="update" doc=this autosave=true}}		
+		{{else}}
+		<span class="logo">{{logo_path}}</span>
+		<span class="desc">{{desc}}</span>
+		<!-- <table class="table table-stiped table-condensed"> -->
+		<!-- <table>
+				<tbody>
+					<tr>
+						<td>Description</td>
+						<td>{{desc}}</td>
+					</tr>
+				</tbody>
+			</table>
+		-->			
+		<a href="/project-details/{{uuid}}">View Details</a>
+		{{/if}}
+		<i class="fa fa-pencil"></i>
+		<!-- <i class="fa fa-trash"></i> -->
+	</article>
+</template>

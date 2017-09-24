@@ -1,0 +1,138 @@
+<template name="ProjectDetails">
+  <h1>{{project.name}}</h1>
+  <!--
+    Description section
+  -->
+  <div class="description">    
+    <h4>Description</h4>
+    {{#if project.desc}}      
+      <i class="fa fa-pencil edit-description"></i>
+      <p>{{project.desc}}</p>
+    {{else}}
+      {{#if $.Session.get 'newDescription'}}
+        {{> NewDescription}}
+      {{else}}
+        <button id="newDescriptionButton" title="Add new description">Add</button>
+        <p>No description yet.</p>
+      {{/if}}        
+    {{/if}}
+  </div>  
+  <!--
+    Screenshots section
+  -->
+  <div class="project_details">
+    <h4>Screenshots</h4>
+    {{#if project.screenshots}}
+      {{#each project.screenshots}}
+        <div class="project_details">
+          <span class="screenshot_caption">{{caption}}</span>
+          <img class="screenshot_path" src="{{path}}" height="100" width="100">
+        </div>
+        <br>
+      {{/each}}
+    {{else}}
+      <div class="project_details">
+        <span class="screenshot_caption">N/A</span>
+      </div>    
+    {{/if}}
+  </div>
+  <!--
+    Video tutorials section
+  -->
+  <div class="project_details">
+    <h4>Screenshots</h4>
+    {{#if project.video_tutorials}}    
+      {{#each project.video_tutorials}}
+        <div class="project_details">
+          <a href="{{path}}">{{caption}}</a>
+          <span class="video_desc">{{desc}}</span>
+        </div>
+        <br>
+      {{/each}}
+    {{else}}
+      <div class="project_details">       
+        <span class="video_desc">N/A</span>
+      </div>    
+    {{/if}}
+  </div>
+  <!--
+    Intended usage section
+  -->
+  <div class="project_details">
+    <h4>Intended Usage</h4>
+    {{#if project.intended_usage}}  
+      <ul>  
+      {{#each project.intended_usage}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
+    {{else}}
+      <span class="video_desc">None specified</span>
+    {{/if}}
+  </div>
+  <!--
+    Tags section
+  -->
+  <div class="project_details">
+    <h4>Tags</h4>
+    {{#if project.tags}}  
+      <ul>  
+      {{#each project.tags}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
+    {{else}}
+      <span class="video_desc">None specified</span>
+    {{/if}}
+  </div>
+  <!--
+    Authorization scheme section
+  -->
+  <div class="project_details">
+    <h4>Authorization Scheme</h4>
+    {{#if project.authorization_scheme}}  
+      Type: <span class="auth_scheme_type">{{type}}</span>
+      Description: <span class="auth_scheme_desc">{{desc}}</span>
+    {{else}}
+      <span class="auth_scheme_desc">None specified</span>
+    {{/if}}
+  </div>
+  <!--
+    Links section
+  -->
+  <div class="project_details">
+    <h4>Links</h4>
+    {{#if project.links}}    
+      {{#each project.links}}
+        <div class="project_details">
+          <a href="{{url}}">{{label}}</a>
+          <span class="link_desc">{{desc}}</span>
+        </div>
+        <br>
+      {{/each}}
+    {{else}}
+      <div class="project_details">       
+        <span class="link_desc">N/A</span>
+      </div>    
+    {{/if}}
+  </div>
+  <!--
+    Points of contact section
+  -->
+  <div class="project_details">
+    <h4>Contacts</h4>
+    {{#if project.points_of_contact}}    
+      {{#each project.points_of_contact}}
+        <div class="project_details">
+          <a href="mailto:{{email}}">{{first_name}} {{last_name}}</a>
+          <span class="contact_desc">{{role}}</span>
+        </div>
+        <br>
+      {{/each}}
+    {{else}}
+      <div class="project_details">       
+        <span class="contact_desc">N/A</span>
+      </div>    
+    {{/if}}
+  </div>  
+</template>
