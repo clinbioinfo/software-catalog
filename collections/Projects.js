@@ -3,13 +3,6 @@ import {Meteor} from 'meteor/mongo';
 
 Projects = new Mongo.Collection('projects');
 
-Tracker.autorun(() => {
-
-	Meteor.subscribe('projects');
-});
-
-
-
 Projects.allow({
 	insert: function(userId, doc){
 		return !!userId;
